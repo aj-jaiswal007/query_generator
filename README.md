@@ -25,3 +25,4 @@ SELECT * FROM "Resume" WHERE ("Resume"."raw_content" iLIKE %python% OR "Resume".
 - Clone the respository
 - Run command `python3 main.py test` to run pre-defined test cases
 - Run command `python3 main.py` to test query generator for multiple custom inputs
+- Please note that **AND** and **OR** are case sensitive, using **and** and **or** won't work
