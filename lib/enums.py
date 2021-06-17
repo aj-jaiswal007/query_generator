@@ -24,9 +24,9 @@ class OperatorPrecedence(Enum):
     OR = 0
 
     @staticmethod
-    def get_precedence(operator: str):
+    def get_precedence(operator: str) -> int:
         if operator not in Operator.values():
-            raise ValueError(f"Invalid operator `{operator}`")
+            return -1
 
         return getattr(OperatorPrecedence, operator, None).value
 

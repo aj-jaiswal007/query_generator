@@ -13,6 +13,8 @@ class Tokenizer:
             IP: ("Hello" OR 'python is good')
 
             OP: [ ( , "Hello", OR, 'python is good' ] 
+
+        TODO: check all edge cases and resolve bugs in this method
         """
         return re.findall(r"""AND|OR|[\(\)]|\w+|".+"|'.+'""", self._query)
 
@@ -30,7 +32,8 @@ class Tokenizer:
         """Validates if the token list is a valid query
         Raises AssertionError if expression not valid
 
-        NOTE: This is not the best expression validator, modify it later
+        NOTE: This is not the best expression validator.
+        TODO: modify it later to support more varations
         """
         open_bracket_visited = 0
         prev_type = None
@@ -51,7 +54,7 @@ class Tokenizer:
                 assert (
                     curr_type != prev_type
                 ), 'Consecutive {0} found, did you forget to add {1}?'.format(
-                    curr_type.value,
+                    'operators' if curr_type == TokenType.OPERATOR else "words",
                     'quotes " "' if curr_type == TokenType.OPERAND else 'a search string'
                 )
                 if curr_type == TokenType.OPERATOR:
