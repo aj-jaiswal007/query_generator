@@ -16,5 +16,5 @@ class SQLQueryGenerator(BaseQueryGenerator):
         return "({0} {1} {2})".format(b, op, a)
 
     def text_to_query(self, value: str) -> Any:
-        """Create mongo query from text"""
+        """Create SQL query from text"""
         return '"{0}"."{1}" iLIKE %{2}%'.format(self._table_name, self._column_name, value)
