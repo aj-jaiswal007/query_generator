@@ -12,7 +12,7 @@ python OR java
 ```
 This will generate the following SQL and MongoDB queries:
 ```
-MONGO QUERY:
+MONGO FILTER QUERY:
 {'$or': [{'raw_content': {'$regex': 'python', '$options': 'i'}}, {'raw_content': {'$regex': 'java', '$options': 'i'}}]}
 
 

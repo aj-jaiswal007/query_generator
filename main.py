@@ -21,7 +21,7 @@ def test(query: str, table: str = "Resume", column: str = "text"):
     print("ORIGINAL STRING:")
     print(query)
     print()
-    print("MONGO QUERY DICT:")
+    print("MONGO FILTER QUERY DICT:")
     print(mongo_gen.evaluate_expression())
     print()
     print("SQL QUERY:")
